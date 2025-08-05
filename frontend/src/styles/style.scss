@@ -1,0 +1,261 @@
+
+/* Scoped CSS styles. These styles will only affect the elements in this component,
+   preventing them from interfering with other parts of your application. */
+
+.app-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.fire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.fire-zone {
+    min-width: 200px;
+    min-height: 120px;
+    max-width: 220px;
+    max-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #76e953; /* default green */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.fire-zone:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fire-zone h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Base styles for active zones (with pulsing animation) */
+.fire-zone.active {
+    animation: pulse 1.5s infinite alternate;
+    color: #fff;
+    font-weight: bold;
+}
+
+.fire-zone.active h3 {
+    color: #fff;
+}
+
+/* New CSS classes for intensity levels */
+.fire-zone.low-intensity {
+    background-color: #e0c127; /* Yellow */
+    border-color: #d9d505;
+}
+
+.fire-zone.medium-intensity {
+    background-color: #fb8c00; /* Darker Orange */
+    border-color: #e65100;
+}
+
+.fire-zone.high-intensity {
+    background-color: #d32f2f; /* Bright Red */
+    border-color: #b71c1c;
+}
+
+.fire-zone.cleared {
+    background-color: #4caf50; /* Green */
+    border-color: #388e3c;
+    animation: none; /* No pulsing for cleared alerts */
+}
+
+.fire-zone.cleared h3 {
+    color: #fff;
+}
+
+.alert-text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cleared-text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for the pulsing animation */
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
+    }
+    to {
+        box-shadow: 0 0 0 10px rgba(211, 47, 47, 0);
+    }
+}
+
+.alert-details {
+    background-color: #fff3e0;
+    border: 1px solid #ffb74d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.alert-details.cleared-details {
+    background-color: #e8f5e9;
+    border: 1px solid #81c784;
+}
+
+.alert-details h2 {
+    color: #e65100;
+    margin-top: 0;
+}
+
+.alert-details.cleared-details h2 {
+    color: #2e7d32;
+}
+
+.alert-details p {
+    margin-bottom: 8px;
+}
+
+.status-active {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.status-cleared {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.alert-details button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.alert-details button:hover {
+    background-color: #d32f2f;
+}
+
+/* Modal styles for the simulated alert */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #000000; /* Changed to black */
+}
+
+.modal-cleared h3 {
+    color: #000000; /* Changed to black */
+}
+
+.alert-message {
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    text-align: left;
+    padding: 15px;
+    background-color: #ffebee;      /* Light red */
+    border-left: 5px solid #d32f2f; /* Red border */
+    font-family: monospace;
+    font-size: 0.9em;
+    border-radius: 4px;
+    color: #000000; /* Black text color */
+}
+
+.alert-message-cleared {
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    color: #000000; /* Black text color */
+}
+
+.modal-content button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-cleared {
+    background-color: #4caf50 !important;
+}
+
+.modal-content button:hover {
+    background-color: #d32f2f;
+}
+
+.button-cleared:hover {
+    background-color: #388e3c !important;
+}
+
+.alert-details.cleared-details button {
+    background-color: #4caf50 !important;
+    color: white;
+}
+.alert-details.cleared-details button:hover {
+    background-color: #388e3c !important;
+}
