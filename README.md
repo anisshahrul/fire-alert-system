@@ -54,6 +54,8 @@ pip install -r requirements.txt
 
 ### 🚦 4. Run the FastAPI Server
 
+NOTE: Code for backend is in server.py file. ('fire-alert-system/backend/server.py')
+
 1. Open your terminal and make sure you're in the root project directory:
 `/fire-alert-system/backend`
 2. Run the development server with: 
@@ -66,6 +68,9 @@ uvicorn server:app --reload --port 3001
 4. ⚠️ If you encounter an "address already in use" error, it means port 3001 is occupied.
 
 ### 🎈 5. Monitor the fire dashboard
+
+NOTE: Codes for frontend are in App.vue and style.scss under styles from ('fire-alert-system/frontend/src/App.vue' and 'fire-alert-system/frontend/src/styles/style.scss')
+
 1. In a **new terminal window**, make sure you're in the root project directory:
 `/fire-alert-system/frontend`
 2. Run the frontend with:
